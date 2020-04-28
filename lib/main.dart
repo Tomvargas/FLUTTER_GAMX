@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+ 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return MaterialApp(
       title: 'Game Gallery',
       theme: ThemeData(
@@ -48,18 +51,19 @@ class _MyHomePageState extends State<MyHomePage> {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     return Scaffold(
-      
+      backgroundColor: bg,
       body: Column(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
+
         
         children:<Widget>[ Padding(  
-            padding: EdgeInsets.fromLTRB(15, 30, 0, 0),  
+            padding: EdgeInsets.fromLTRB(15, 30, 0, 0),
+            //Image.asset("resources/icon.png"),
+            
             child: Text(  
               'GAM X',
               style: TextStyle(color: ctxt,fontWeight: FontWeight.bold, fontSize: 45),
-
-              
               ),
             ),
 ],
