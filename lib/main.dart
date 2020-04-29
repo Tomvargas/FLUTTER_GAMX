@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+//---------HORA
+//import 'package:intl/intl.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -48,25 +49,36 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //---------------------------------------------HORA
+    //DateTime now = DateTime.now();
+    //String hora = DateFormat('HH:mm').format(now);
+    //-----------------------------------------------------
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     return Scaffold(
       backgroundColor: bg,
-      body: Column(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      body: Row(
+        children:<Widget>[ 
+          Padding(  
+            padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
 
-        
-        children:<Widget>[ Padding(  
-            padding: EdgeInsets.fromLTRB(15, 30, 0, 0),
-            //Image.asset("resources/icon.png"),
+            child: Image.asset("resources/icon.png")),
+
+          Padding(  
+            padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
             
-            child: Text(  
-              'GAM X',
-              style: TextStyle(color: ctxt,fontWeight: FontWeight.bold, fontSize: 45),
-              ),
-            ),
-],
+            child: Text('GAM X', style: TextStyle(color: ctxt,fontWeight: FontWeight.bold, fontSize: 45)),
+            
+          ),
+          /* ------------------------------------- HORA
+          Padding(  
+            padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
+            
+            child: Text(hora, style: TextStyle(color: ctxt,fontWeight: FontWeight.bold, fontSize: 30)),
+            
+          ),
+          */ //---------------------------------------------------------------------
+        ]
       ),
       floatingActionButton: FloatingActionButton(
         child:Icon(Icons.more_horiz),
@@ -74,7 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'add',
         foregroundColor: ctxt,
         backgroundColor: blue,                                                                                                                                     
-        
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
